@@ -11,8 +11,12 @@
     "authors": [
         {
             "name": "louigio04",
-            "email": "Luiginmen638@gmail.com"
+            "email": "luiginmen638@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^8.3",
+        "symfony/dom-crawler": "^8.1",
+        "symfony/css-selector": "^8.1"
+    }
 }
