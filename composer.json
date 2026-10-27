@@ -5,7 +5,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "louigio04\\Buscador-Cursos\\": "src/"
+            "louigio04\\BuscadorDeCursos\\": "src/"
         }
     },
     "authors": [
@@ -18,5 +18,8 @@
         "guzzlehttp/guzzle": "^8.3",
         "symfony/dom-crawler": "^8.1",
         "symfony/css-selector": "^8.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^13.4"
     }
 }

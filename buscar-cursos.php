@@ -2,19 +2,16 @@
 
 require 'vendor/autoload.php';
 
+use louigio04\BuscadorDeCursos\Buscador;
 use GuzzleHttp\Client;
 use Symfony\Component\DomCrawler\Crawler;
 
-$client = new Client();
-$resposta = $client->request("GET","https://www.alura.com.br/cursos-online-back-end/php", ['verify'=> false]);
-
-$html = $resposta->getBody()->getContents();
-
+$client = new Client(['base_uri' => 'https://www.alura.com.br/']);
 $crawler = new Crawler();
-$crawler->addHtmlContent($html);
 
-$cursos = $crawler->filter('h3.line-clamp-2');
+$buscador = new Buscador($client, $crawler);
+$cursos = $buscador->buscar('/cursos-online-back-end/php');
 
 foreach ($cursos as $curso) {
-    echo $curso->textContent . PHP_EOL;
+    echo $curso . PHP_EOL;
 }
