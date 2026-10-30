@@ -1,6 +1,5 @@
+#!/usr/bin/env php
 <?php
-
-namespace louigio04\BuscadorDeCursos;
 
 require 'vendor/autoload.php';
 
@@ -12,7 +11,7 @@ $client = new Client(['base_uri' => 'https://www.alura.com.br/']);
 $crawler = new Crawler();
 
 $buscador = new Buscador($client, $crawler);
-$cursos = $buscador->buscar('/cursos-online-back-end/php');
+$cursos = $buscador->buscar('/cursos-online-back-end/php', 'h3.line-clamp-2');
 
 foreach ($cursos as $curso) {
     echo $curso . PHP_EOL;

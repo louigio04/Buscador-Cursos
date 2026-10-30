@@ -22,14 +22,14 @@ class Buscador
         $this->crawler = $crawler;
     }
 
-    public function buscar(string $url): array
+    public function buscar(string $url, string $filtroCrawler): array
     {
         $resposta = $this->httpClient->request("GET", $url, ['verify' => false]);
 
         $html = $resposta->getBody()->getContents();
         $this->crawler->addHtmlContent($html);
 
-        $elementosCursos = $this->crawler->filter('h3.line-clamp-2');
+        $elementosCursos = $this->crawler->filter($filtroCrawler);
         $cursos = [];
 
         foreach ($elementosCursos as $elemento) {
