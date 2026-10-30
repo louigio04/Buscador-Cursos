@@ -1,5 +1,7 @@
 <?php
 
+namespace louigio04\BuscadorDeCursos;
+
 require 'vendor/autoload.php';
 
 use louigio04\BuscadorDeCursos\Buscador;

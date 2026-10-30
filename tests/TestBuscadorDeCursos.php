@@ -19,9 +19,9 @@ class TestBuscadorDeCursos extends TestCase
         $html = <<<FIM
         <html>
             <body>
-                <span class="card-curso__nome">Curso Teste 1</span>
-                <span class="card-curso__nome">Curso Teste 2</span>
-                <span class="card-curso__nome">Curso Teste 3</span>
+                <h3 class="line-clamp-2">Curso Teste 1</h3>
+                <h3 class="line-clamp-2">Curso Teste 2</h3>
+                <h3 class="line-clamp-2">Curso Teste 3</h3>
             </body>
         </html>
         FIM;

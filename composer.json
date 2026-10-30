@@ -20,6 +20,25 @@
         "symfony/css-selector": "^8.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^13.4"
+        "phpunit/phpunit": "^13.4",
+        "squizlabs/php_codesniffer": "*",
+        "phan/phan": "^6.0"
+    },
+    "scripts": {
+        "test": "phpunit tests\\TestBuscadorDeCursos.php",
+        "cs": "phpcs --standard=PSR12 src/",
+        "phan": "phan",
+        "exibe-cursos": "louigio04\\BuscadorDeCursos:",
+        "check": [
+            "@phan",
+            "@cs",
+            "@test"
+        ],
+        "post-update-cmd": [
+            "@test"
+        ]
+    },
+    "scripts-descriptions": {
+        "check": "Roda as verificações do código. PHAN, PHPCS e PHPUNIT"
     }
 }
